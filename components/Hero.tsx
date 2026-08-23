@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/image"; 
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    // Forzamos el fondo gris claro y quitamos la herencia oscura
     <section className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-[#F4F4F5]">
       
       {/* Resplandor de fondo vinculado a la campaña activa (ahora más sutil para fondo claro) */}
@@ -16,7 +15,7 @@ export default function Hero() {
         
         {/* BLOQUE DE TEXTO */}
         <div className="flex-1 space-y-8 text-center md:text-left">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-black">
             El futuro en <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-gray-600">
               tus manos.
