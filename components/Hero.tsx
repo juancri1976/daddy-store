@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="flex-1 w-full flex justify-center md:justify-end relative">
           <div className="relative w-72 h-96 md:w-96 md:h-[500px] animate-float">
             <Image 
-              src="/hero_spiral.png"
+              src="/tecno.png"
               alt="Producto Destacado"
               fill
               className="object-contain drop-shadow-2xl" 

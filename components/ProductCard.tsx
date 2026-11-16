@@ -2,6 +2,7 @@ import { ShoppingCart } from "lucide-react";
 import Link from "next/link"; 
 
 interface ProductCardProps {
+  id: string; // <-- Agregamos el ID de Supabase
   name: string;
   category: string;
   price: number;
@@ -9,14 +10,12 @@ interface ProductCardProps {
   imageUrl: string;
 }
 
-export default function ProductCard({ name, category, price, specs, imageUrl }: ProductCardProps) {
-  const productSlug = name.toLowerCase().replace(/\s+/g, '-');
-
+export default function ProductCard({ id, name, category, price, specs, imageUrl }: ProductCardProps) {
   return (
-    <div className="group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-accent/50 hover:shadow-xl transition-all duration-300">
+    <div className="group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-black/50 hover:shadow-xl transition-all duration-300">
       
-      {/* ÁREA DE IMAGEN (Ahora clara) */}
-      <Link href={`/producto/${productSlug}`} className="relative h-64 w-full bg-gray-100 flex items-center justify-center overflow-hidden block">
+      {/* ÁREA DE IMAGEN */}
+      <Link href={`/producto/${id}`} className="relative h-64 w-full bg-gray-100 flex items-center justify-center overflow-hidden">
         <img 
           src={imageUrl} 
           alt={name} 
@@ -31,14 +30,14 @@ export default function ProductCard({ name, category, price, specs, imageUrl }: 
           {category}
         </span>
         
-        {/* TÍTULO: Negro, compacto (como el Hero) y tamaño adaptado */}
-        <Link href={`/producto/${productSlug}`}>
-          <h3 className="text-lg font-bold tracking-tighter text-black leading-tight mb-1 hover:text-accent transition-colors">
+        {/* TÍTULO */}
+        <Link href={`/producto/${id}`}>
+          <h3 className="text-lg font-bold tracking-tighter text-black leading-tight mb-1 hover:text-gray-600 transition-colors">
             {name}
           </h3>
         </Link>
         
-        {/* SUBTÍTULOS: Gris */}
+        {/* SUBTÍTULOS */}
         <p className="text-sm text-gray-500 font-light mb-4">
           {specs}
         </p>
@@ -49,9 +48,9 @@ export default function ProductCard({ name, category, price, specs, imageUrl }: 
           </span>
           
           <Link 
-            href="/checkout"
-            className="p-2 rounded-full bg-gray-50 border border-gray-200 text-gray-700 hover:bg-accent hover:text-white hover:border-accent transition-colors"
-            aria-label="Comprar directo"
+            href={`/producto/${id}`} // <-- Mejor llevarlo al detalle antes de ir al checkout directo
+            className="p-2 rounded-full bg-gray-50 border border-gray-200 text-gray-700 hover:bg-black hover:text-white hover:border-black transition-colors"
+            aria-label="Ver producto"
           >
             <ShoppingCart className="w-5 h-5" />
           </Link>

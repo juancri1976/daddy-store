@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Usamos una fuente limpia y moderna (Inter viene por defecto)
 const inter = Inter({ subsets: ["latin"] });
@@ -25,6 +26,8 @@ export default function RootLayout({
         
                 {/* Acá abajo se renderiza el contenido de cada página */}
         {children}
+
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

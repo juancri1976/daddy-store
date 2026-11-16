@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Columna 4: Newsletter */}
           <div>
-            <h4 className="text-white font-medium mb-6 tracking-wide">Newsletter</h4>
+            <h4 className="text-white font-medium mb-6 tracking-wide">Club Daddy</h4>
             <p className="text-sm text-gray-400 font-light mb-4">
               Suscribite para recibir accesos anticipados a lanzamientos y descuentos exclusivos.
             </p>
